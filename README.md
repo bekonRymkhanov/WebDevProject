@@ -1,6 +1,6 @@
 # Newspaper Web App
 
-Welcome to the Newspaper Web App! This is a simple web application developed by Alikhan Kassiman and Rymkhanov Bekarys. The app displays articles authored by Alikhan Kassiman and Rymkhanov Bekarys.
+Welcome to the Newspaper Web App! This is a simple web application developed by Alikhan Kassiman and Rymkhanov Bekarys.The application will contain the news and articles.
 
 ## Features
 
