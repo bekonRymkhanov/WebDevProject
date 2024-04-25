@@ -1,0 +1,18 @@
+<fieldset>
+  <input type="number" [(ngModel)]="newBet.state_chosen" placeholder="choose the state">
+  <input type="text" [(ngModel)]="newBet.amount" placeholder="amount">
+  <button (click)="UpdateBets()">Update</button>
+</fieldset>
+
+<div *ngIf="loaded">
+  <h1>Bet id :{{bet.id}}</h1>
+  <h2>state choosen is :{{bet.state_chosen}}</h2>
+  <h2>amount :{{bet.amount}}</h2>
+  <button (click)="DeleteBet(bet.id)" [routerLink]="['/bets']">Delete</button>
+
+
+</div>
+
+<p *ngIf="!loaded" class="loading-message">
+  LOADING...
+</p>

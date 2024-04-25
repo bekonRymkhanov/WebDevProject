@@ -1,0 +1,24 @@
+<fieldset>
+  <input type="number" [(ngModel)]="newBet.state_chosen" placeholder="choose the state">
+  <input type="text" [(ngModel)]="newBet.amount" placeholder="amount">
+  <button (click)="CreateBets()">Create</button>
+</fieldset>
+
+<div *ngIf="loaded">
+  <h1>Match :{{match.home_club.name}}-{{match.away_club.name}}</h1>
+  <h2>coefficients :{{match?.state1}}:{{match?.state2}}:{{match?.state3}}</h2>
+  <ul class="albums-list">
+    <li *ngFor="let bet of bets">
+      <div>
+        <h2 [routerLink]="['/bets/', bet.id]">{{ bet.id }}</h2>
+        <h2 [routerLink]="['/bets/', bet.id]">{{ bet.amount }}</h2>
+        <h3 [routerLink]="['/bets/', bet.id]">{{ bet.state_chosen }}</h3>
+        <button (click)="DeleteBet(bet.id)">Delete</button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<p *ngIf="!loaded" class="loading-message">
+  LOADING...
+</p>

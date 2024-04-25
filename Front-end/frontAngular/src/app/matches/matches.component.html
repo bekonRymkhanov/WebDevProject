@@ -1,0 +1,25 @@
+<ng-container *ngIf="loaded">
+  <fieldset>
+    <input type="number" [(ngModel)]="newMatch.home_club.id" placeholder="Enter home club id">
+    <input type="number" [(ngModel)]="newMatch.away_club.id" placeholder="Enter away club id">
+    <input type="number" [(ngModel)]="newMatch.state1" placeholder="coefficient of home club">
+    <input type="number" [(ngModel)]="newMatch.state2" placeholder="coefficient of away club">
+    <input type="number" [(ngModel)]="newMatch.state3" placeholder="coefficient of  draw">
+
+    <button (click)="CreateMatch()">Create</button>
+  </fieldset>
+  <div *ngIf="loaded">
+    <ul class="albums-list">
+      <li *ngFor="let match of matches">
+        <div class="albums__container">
+          <h3 [routerLink]="['/matches/', match.id]" >{{ match.home_club.name }}-{{match.away_club.name}}</h3>
+          <button (click)="DeleteMatches(match.id)" class="delete-button">Delete</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <p *ngIf="!loaded" class="loading-message">
+    LOADING...
+  </p>
+</ng-container>

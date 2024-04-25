@@ -1,0 +1,20 @@
+<ng-container *ngIf="loaded">
+
+  <div *ngIf="loaded">
+    <ul class="albums-list">
+      <li *ngFor="let bet of bets">
+        <div class="albums__container">
+          <h2 [routerLink]="['/bets/', bet.id]">{{ bet.id }}</h2>
+          <h2 [routerLink]="['/bets/', bet.id]">{{ bet.amount }}</h2>
+          <h3 [routerLink]="['/bets/', bet.id]">{{ bet.state_chosen }}</h3>
+          <button (click)="DeleteBet(bet.id)">Delete</button>
+
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <p *ngIf="!loaded" class="loading-message">
+    LOADING...
+  </p>
+</ng-container>
