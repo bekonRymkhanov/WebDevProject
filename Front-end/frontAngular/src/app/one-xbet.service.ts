@@ -64,7 +64,7 @@ export class OneXBetService {
     return this.client.delete(`http://127.0.0.1:8000/api/users/${id}/`)
   }
   putUser(newUser:MyUser){
-    return this.client.put<MyUser>(`http://127.0.0.1:8000/api/users/${newUser.id}/`,newUser)
+    return this.client.put<MyUser>(`http://127.0.0.1:8000/api/users/${newUser.id}/put`,newUser)
   }
   getBets(){
     return this.client.get<Bet[]>(`http://127.0.0.1:8000/api/bets/`)

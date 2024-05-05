@@ -1,7 +1,7 @@
 <fieldset>
   <input type="number" [(ngModel)]="newBet.state_chosen" placeholder="choose the state">
   <input type="text" [(ngModel)]="newBet.amount" placeholder="amount">
-  <button (click)="CreateBets()">Create</button>
+  <button (click)="CreateBets()" [routerLink]="['/booking']" >Create</button>
 </fieldset>
 
 <div *ngIf="loaded">

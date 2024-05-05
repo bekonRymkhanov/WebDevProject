@@ -1,0 +1,15 @@
+<div class="login-form">
+  <fieldset>
+    <label for="username">Number of car: </label>
+    <input type="text" id="username" [(ngModel)]="NumberChosen">
+  </fieldset>
+  <p> Available slots: <br>
+    <select >
+      <option value="A2" >A2</option>
+      <option value="A3" >A4</option>
+      <option value="C1" >C2</option>
+    </select>
+  </p>
+
+  <button (click)="confirm()">Confirm</button>
+</div>

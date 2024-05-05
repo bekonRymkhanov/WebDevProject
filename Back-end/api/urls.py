@@ -20,5 +20,7 @@ urlpatterns = [
 
     path('users/', UserListCreate.as_view(), name='bet-list'),
     path('users/<int:pk>/',UserDetail.as_view(), name='bet-detail'),
+    path('users/<int:pk>/put',UserDetailPut.as_view(), name='bet-detail'),
+
 
 ]

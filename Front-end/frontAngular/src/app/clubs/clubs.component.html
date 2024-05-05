@@ -8,8 +8,11 @@
     <ul class="albums-list">
       <li *ngFor="let club of clubs">
         <div class="albums__container">
-          <h3 [routerLink]="['/clubs/', club.id,'matches']" >{{ club.name }}</h3>
+          <h3 [routerLink]="['/clubs/', club.id,'matches']" >{{ club.id }}</h3>
+
           <h3 [routerLink]="['/clubs/', club.id,'matches']" >{{ club.points }}</h3>
+
+          <h3 [routerLink]="['/clubs/', club.id,'matches']" >{{ club.name }}</h3>
 
           <button (click)="DeleteClub(club.id)" class="delete-button">Delete</button>
         </div>

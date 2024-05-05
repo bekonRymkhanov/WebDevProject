@@ -9,6 +9,7 @@ import {MatchesByClubsComponent} from "./matches-by-clubs/matches-by-clubs.compo
 import {MatchDetailsComponent} from "./match-details/match-details.component";
 import {BetsComponent} from "./bets/bets.component";
 import {BetDetailsComponent} from "./bet-details/bet-details.component";
+import {BookingComponent} from "./booking/booking.component";
 
 export const routes: Routes = [
     { path:"",redirectTo:"home",pathMatch:"full" },
@@ -19,11 +20,10 @@ export const routes: Routes = [
     { path:"matches/:matchId",component:MatchDetailsComponent,title:"match details page" },
     { path:"bets",component:BetsComponent,title:"bets page" },
     { path:"bets/:betId",component:BetDetailsComponent,title:"bets detail page" },
-
+    { path:"booking",component:BookingComponent,title:"booking of place"},
     { path:"user_detail",component:UserComponent,title:"profile page" },
 
     { path:"clubs/:clubId/matches", component:MatchesByClubsComponent,
       title:"matches of club page" },
-    // { path:"vacancies",component:VacanciesComponent,title:"Vacancies page" },
     { path:"**",component:NotFoundComponent,title:"404 - not found" }
 ];

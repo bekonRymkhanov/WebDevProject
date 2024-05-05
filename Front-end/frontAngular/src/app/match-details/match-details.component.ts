@@ -60,13 +60,22 @@ export class MatchDetailsComponent implements OnInit{
       user:0
     };
     this.httpService.getUsers().subscribe(user=>{
-      copy.user=user[0].id
-      this.httpService.postBet(copy).subscribe((bet) => {
-        this.bets.unshift(bet);
+      if (user[0].balance<parseInt(this.newBet.amount)){
+        return ;
+      }
 
-        this.newBet.state_chosen=0;
-        this.newBet.amount='';
-    })
+      user[0].balance-=parseInt(this.newBet.amount)
+      this.httpService.putUser(user[0]).subscribe(user=>{
+        copy.user=user.id
+        this.httpService.postBet(copy).subscribe((bet) => {
+          this.bets.unshift(bet);
+
+          this.newBet.state_chosen=0;
+          this.newBet.amount='';
+        })
+      })
+
+
 
 
     });

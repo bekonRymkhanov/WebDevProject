@@ -12,11 +12,12 @@ import {FormsModule} from "@angular/forms";
 import {OneXBetService} from "./one-xbet.service";
 import {HomeComponent} from "./home/home.component";
 import {AboutComponent} from "./about/about.component";
+import {BookingComponent} from "./booking/booking.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ClubsComponent, CommonModule, BetDetailsComponent, BetsComponent, MatchesComponent, MatchDetailsComponent, MatchesByClubsComponent, UserComponent, RouterLink, FormsModule,HomeComponent,AboutComponent],
+  imports: [RouterOutlet,BookingComponent, ClubsComponent, CommonModule, BetDetailsComponent, BetsComponent, MatchesComponent, MatchDetailsComponent, MatchesByClubsComponent, UserComponent, RouterLink, FormsModule,HomeComponent,AboutComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -9,7 +9,7 @@ from rest_framework import status,mixins,generics
 
 import json
 from ..models import Bet,Match,Club,MyUser
-from ..serializers import BetSerializer,BetSerializer2,MatchSerializer,MyUserSerializer2,ClubSerializer,ClubSerializer2,MyUserSerializer,MatchSerializer2
+from ..serializers import MyUserSerializer3, BetSerializer,BetSerializer2,MatchSerializer,MyUserSerializer2,ClubSerializer,ClubSerializer2,MyUserSerializer,MatchSerializer2
 
 from rest_framework.permissions import AllowAny,IsAuthenticated
 
@@ -67,7 +67,10 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = MyUserSerializer2
     permission_classes=(IsAuthenticated,)
 
-
+class UserDetailPut(generics.RetrieveUpdateDestroyAPIView):
+    queryset = MyUser.objects.all()
+    serializer_class = MyUserSerializer3
+    permission_classes=(IsAuthenticated,)
 class MatchesByClub(generics.ListAPIView):
     serializer_class = MatchSerializer
     permission_classes=(IsAuthenticated,)
